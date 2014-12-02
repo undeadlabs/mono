@@ -1288,6 +1288,7 @@ static const char info[] =
 #if defined(MONO_ARCH_SOFT_DEBUG_SUPPORTED) && !defined(DISABLE_SOFT_DEBUG)
 	"softdebug "
 #endif
+		"undeadlabs "
 		"\n"
 #ifdef MONO_ARCH_LLVM_SUPPORTED
 #ifdef ENABLE_LLVM
