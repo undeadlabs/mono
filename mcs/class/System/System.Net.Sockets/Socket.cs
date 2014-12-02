@@ -1101,8 +1101,11 @@ namespace System.Net.Sockets
 			int error;
 			
 			Bind_internal(socket, local_end.Serialize(), out error);
-			if (error != 0)
-				throw new SocketException (error);
+			if (error != 0) {
+				var ex = new SocketException (error);
+				ex.Data.Add("Address", local_end.ToString());
+				throw ex;
+			}
 			if (error == 0)
 				isbound = true;
 			
